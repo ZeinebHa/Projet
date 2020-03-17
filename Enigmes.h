@@ -2,7 +2,7 @@
 #define ENIGME_H_INCLUDED
 typedef struct 
 {
- SDL_Surface * img;
+ SDL_Surface * Img;
  SDL_Rect 	p;
 }Enigme;
 
