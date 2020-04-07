@@ -94,4 +94,4 @@ int resolution (int * running,int *run )
  		SDL_BlitSurface(en->img, NULL, screen, &(en->p)) ;
         SDL_Flip(screen);
  	}
- }
+ 
