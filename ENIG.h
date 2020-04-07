@@ -29,11 +29,11 @@ SDL_Rect posbackground;
 temps time;
 bouton buttom[2];
 }enigme;
-void deplacementperso(labyrinthe laby);
+
 void afficherlaby(labyrinthe laby);
 void initialiserEnigme(enigme statique);
 void afficheEnigme(enigme statique);
 void resoudreEnigme(enigme statique);
 void gestionDuTempsEnigme(enigme statique);
-void generationAleatoirEnigme(enigme dynamique);
+
 #endif
