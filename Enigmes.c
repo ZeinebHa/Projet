@@ -18,8 +18,8 @@ void generate_afficher (SDL_Surface *ecran  , char image [],enigme *E,int *RaNd)
  *RaNd = 1+ rand()%3;
 
  sprintf(image ,"%d.jpg",*RaNd);
-E->img = IMG_Load(image);
- SDL_BlitSurface(E->img,NULL,ecran,&(E->p)) ;
+E->Img = IMG_Load(image);
+ SDL_BlitSurface(E->Img,NULL,ecran,&(E->p)) ;
   SDL_Flip(screen) ;
 }
 
