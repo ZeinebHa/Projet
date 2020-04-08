@@ -24,7 +24,7 @@ void remplir_fichier(char fichier_question[])
     if(fq==NULL) printf("erreur de l'ouverture");
     else
     {
-	fprintf(fq,"Les cellules sanguines sont elles fabriquees dans le coeur? \nAs-t-on plus de 100 millions de neurones dans notre cerveau? \nEst-ce que la peau est l'organe le plus lourd du corps humain? \nAs-t-on 20 vertebres dans notre colonnes vertebrale? \nL'estomac peut-il contenir 5 litres d'eau? \nUn adulte as-t-il 34 dents? \n");
+	fprintf(fq,"///////////////////////");
 	fclose(fq);
     }
 }
