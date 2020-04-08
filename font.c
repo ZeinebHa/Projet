@@ -2,7 +2,7 @@
 
 TTF_Font *loadFont(char *name, int size)
 {
-	/* Use SDL_TTF to load the font at the specified size */
+	
 
 	TTF_Font *font = TTF_OpenFont(name, size);
 
@@ -18,7 +18,7 @@ TTF_Font *loadFont(char *name, int size)
 
 void closeFont(TTF_Font *font)
 {
-	/* Close the font once we're done with it */
+	
 
 	if (font != NULL)
 	{
@@ -38,8 +38,7 @@ void drawString(char *text, int x, int y, TTF_Font *font)
 	foregroundColor.g = 0;
 	foregroundColor.b = 0;
 
-	/* On utilise SDL_TTF pour générer une SDL_Surface à partir d'une chaîne de caractères (string) */
-
+	
 	surface = TTF_RenderUTF8_Blended(font, text, foregroundColor);
 
 	if (surface == NULL)
@@ -48,7 +47,7 @@ void drawString(char *text, int x, int y, TTF_Font *font)
 		return;
 	}
 
-	/* On blitte cette SDL_Surface à l'écran */
+	
 	dest.x = x;
 	dest.y = y;
 	dest.w = surface->w;
@@ -56,7 +55,7 @@ void drawString(char *text, int x, int y, TTF_Font *font)
 
 	SDL_BlitSurface(surface, NULL, jeu.screen, &dest);
 
-	/* On libère la SDL_Surface temporaire (pour éviter les fuites de mémoire - cf. chapitre dédié) */
+
 	SDL_FreeSurface(surface);
 }
 
