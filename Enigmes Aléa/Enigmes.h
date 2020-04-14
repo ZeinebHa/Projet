@@ -1,24 +1,36 @@
 #ifndef ENIGME_H_INCLUDED
 #define ENIGME_H_INCLUDED
+
+typedef struct Input
+{
+	int left;
+	int up;
+	int down;
+	int right;
+	int enter;
+	int pause;
+} Input;
+
 typedef struct 
 {
  SDL_Surface * Img;
  SDL_Rect 	p;
+ char  R_True[10];
+ char question[100];
+ char re1[10];
+ char re2[10];
+ int resolu=0;
+ int temps ;
+ SDL_Surface * Boutons[5];
+ SDL_Surface *posBouton[5];
+ SDL_Surface *Question,*Reponse1,*Reponse2,*Reponse3;
+ SDL_Surface  *image1,*image2,image3;
+ 
 }Enigme;
 
-typedef struct
-{
-	char  R_True[10];
-	char quest[100];
-	char A1[10];
-	char A2[10];
-}Question;
 
-typedef struct 
-{
-	Question e_q[30];
-	int reponse;
-}Answer;
+
+
 
 
 void initialiser_enigme(Enigme *E);
