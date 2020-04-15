@@ -6,7 +6,7 @@ SDL_Surface * zombie[11];
 SDL_Rect zombiepos;
 int i;
 int mov;
-int collisionexplo;
+
 }zombie;
 typedef struct 
 {
@@ -26,17 +26,14 @@ int i;
 
 
 void initzombie(zombie* z);
-void initzombie2(zombie* z);
-void changeposzombie(zombie* z);
-void movezombie(zombie* z,SDL_Surface* screen);
 
-void movezombie2(zombie* z,SDL_Surface* screen);
-void initbat(bat* b);
-void affichezbat(bat* b,SDL_Surface *screen);
-void initghost(ghost* g);
-void initghost2(ghost* g);
+void updatezombie(zombie* z);
+void animerzombie ();
+void deplacerzombie();
+void bondingbox();
+void display(zombie* z,SDL_Surface* screen);
+void libererzombie();
 
-void affichezghost(ghost* g,SDL_Surface* screen,int vision,personnage *p);
 
 
 #endif 
