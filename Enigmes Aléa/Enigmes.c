@@ -10,14 +10,37 @@ void initialiser_enigme(Enigme *E)
 	E->p.x=0;
 	E->p.y=0;	
 	E->Img=NULL;
+	E->temps= 0000
+	E->resolu =0;
+	E->R_True = "";
+	E->question = "";
+	E->re1 = "";
+	E->re2 = "";
+	E->Question = NULL;
+	E->Question = NULL;
 }
-void generate_afficher (SDL_Surface *ecran  , char image [],enigme *E,int *RaNd)
+
+int getQuestion (char questionn[])
+{
+  int test=0;
+  int *Rand;
+  Enigme E;
+ 
+  initialiser_enigme(&E);
+	
+  sprintf(questionn ,"%d.jpg",*Rand);
+  E->Img = IMG_Load(questionn);
+ 
+	
+	
+}
+void Update_Enigme (SDL_Surface *ecran  , char image [],enigme E,int *Rand)
 { 
 	int test=*RaNd ;
 	srand(time(NULL));
- *RaNd = 1+ rand()%3;
+ *Rand = 1+ rand()%3;
 
- sprintf(image ,"%d.jpg",*RaNd);
+ sprintf(image ,"%d.jpg",*Rand);
 E->Img = IMG_Load(image);
  SDL_BlitSurface(E->Img,NULL,ecran,&(E->p)) ;
   SDL_Flip(screen) ;
