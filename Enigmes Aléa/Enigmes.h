@@ -20,7 +20,8 @@ typedef struct
  char re1[10];
  char re2[10];
  int resolu=0;
- FILE *fichier;
+ FILE *fichierQ;
+ File *fichierRep;
  int temps ;
  SDL_Surface * Boutons[5];
  SDL_Surface *posBouton[5];
