@@ -20,6 +20,7 @@ typedef struct
  char re1[10];
  char re2[10];
  int resolu=0;
+ FILE *fichier;
  int temps ;
  SDL_Surface * Boutons[5];
  SDL_Surface *posBouton[5];
@@ -33,11 +34,12 @@ typedef struct
 
 
 
-void initialiser_enigme(Enigme *E);
-void generer(SDL_Surface *ecran, char image [],Enigme *E ,int *Rand);
-void afficher(enigme *E ,int val);
-int solution_enigme(char image [],int *reponse);
-
-void afficher_resultat (SDL_Surface *ecran ,int solution,int res,Enigme *enigme);
+void Initialiser_Enigme(Enigme *E);
+void generer_Question(SDL_Surface *ecran, char nomFich[],Enigme E );
+int generer_Reponse(char Reponse1[],char Reponse2[], char Reponse3[]);
+void afficher_Question(Enigme E, SDL_Surface *ecran,char nomFich[]);
+void afficher_Reponses(char Reponse1[],char Reponse2[], char Reponse3[]);
+int solution_enigme(Enigme E);
+void afficher_resultat_Enigme(SDL_Surface *ecran ,Enigme enigme);
 void liberer ();
 #endif // ENIGME_H_INCLUDED
