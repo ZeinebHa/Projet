@@ -10,7 +10,7 @@
 
 typedef struct 
 {
- SDL_Surface * Img;
+ 
  char  R_True[10];
  char question[100];
  char re1[10];
@@ -36,6 +36,6 @@ char generer_Reponse(char *reponse1, *reponse2,*reponse3);
 void afficher_Question(Enigme E, SDL_Surface *ecran,char nomFich[]);
 void afficher_Reponses(Enigme E);
 int solution_enigme(Enigme E);
-void afficher_resultat_Enigme(SDL_Surface *ecran ,Enigme enigme);
+void EventBoutons_Enigme(SDL_Event event,Enigme E);
 void liberer ();
 #endif // ENIGME_H_INCLUDED
