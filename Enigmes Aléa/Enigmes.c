@@ -298,3 +298,33 @@ do
     TTF_CloseFont(Font);
 
 }
+
+int solution_enigme(Enigme E)
+{
+int  scorevie=3;
+char Tab[3],reponse[3];
+afficher_Question(E,ecran, nomFich);
+afficher_Reponses(E);
+reponse= ReponseVrai(Tab[3]);
+
+if (strcmp(R_True,reponse)==0)
+{
+  (E.resolu)++;
+   printf("Bravo et bonne continuation \n");
+  return 1;
+}
+else
+{
+  (E.resolu =0);
+   scorevie = scorevie -1;
+   printf(" reponse fausse! Veuillez réessaiyez encore une fois \n");
+return 0;
+}
+
+if (scorevie ==0)
+{
+  printf(" GAME OVER ! ");
+}  
+
+
+}	
