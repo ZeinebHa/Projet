@@ -32,7 +32,7 @@ typedef struct
 
 void Initialiser_Enigme(Enigme *E);
 void generer_Question(SDL_Surface *ecran, char nomFich[],Enigme E );
-int generer_Reponse(char Reponse1[],char Reponse2[], char Reponse3[]);
+char generer_Reponse(char Reponse1[],char Reponse2[], char Reponse3[]);
 void afficher_Question(Enigme E, SDL_Surface *ecran,char nomFich[]);
 void afficher_Reponses(char Reponse1[],char Reponse2[], char Reponse3[]);
 int solution_enigme(Enigme E);
