@@ -1,30 +1,25 @@
 #ifndef ENIGME_H_INCLUDED
 #define ENIGME_H_INCLUDED
-
-typedef struct Input
-{
-	int left;
-	int up;
-	int down;
-	int right;
-	int enter;
-	int pause;
-} Input;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <SDL/SDL.h>
+#include "SDL/SDL_image.h"
+#include "SDL/SDL_ttf.h"
+#include <time.h>
 
 typedef struct 
 {
  SDL_Surface * Img;
- SDL_Rect 	p;
  char  R_True[10];
  char question[100];
  char re1[10];
  char re2[10];
  int resolu=0;
  FILE *fichierQ;
- File *fichierRep;
- int temps ;
- SDL_Surface * Boutons[5];
- SDL_Surface *posBouton[5];
+ FILE *fichierRep;
+ int temps;
+ SDL_Surface *Boutons[5];
  SDL_Surface *Question,*Reponse1,*Reponse2,*Reponse3;
  SDL_Surface  *image1,*image2,image3;
  
