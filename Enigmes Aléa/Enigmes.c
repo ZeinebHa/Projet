@@ -371,6 +371,76 @@ if (scorevie ==0)
 {
   printf(" GAME OVER ! ");
 }  
-
-
 }	
+
+void EventBoutons_Enigme(SDL_Event event,Enigme E,input *inp)
+{
+	switch (event.type)
+		{
+			case SDL_KEYDOWN:
+				switch (event.key.keysym.sym)
+				{
+					case SDLK_ESCAPE:
+						inp->c.echap=1;
+						break;
+						
+					case SDLK_RIGHT:
+						inp->c.droite=1;
+						break; 
+						
+					case SDLK_LEFT:
+						inp->c.gauche=1;
+						break;
+						
+					case SDLK_RETURN:
+						inp->c.entrer=1;
+						break;
+						
+					case SDLK_a:
+						inp->c.a=1;
+						break; 
+						
+					case SDLK_b:
+						inp->c.b=1;
+						break;
+					
+				}
+				break;
+			
+			case SDL_MOUSEMOTION:
+			
+				if ((event.motion.x>=E.posbouton[1].x)&&(event.motion.x<=E.posbouton[1].x+180)&&(event.motion.y>=E.posbouton[1].y)&&(event.motion.y<=E.posbouton[1].y+70))
+				{
+					inp->s.motion=1;//sur case reponse num 1
+					//printf("sur la premiere case\n");
+				}
+			        else if ((event.motion.x>=E.posbouton[2].x)&&(event.motion.x<=E.posbouton[2].x+180)&&(event.motion.y>=E.posbouton[2].y)&&(event.motion.y<=E.posbouton[2].y+70))
+				{					
+					inp->s.motion=2;//sur case reponse num 2
+					//printf("sur la deuxieme case\n");
+				}
+			        else if ((event.motion.x>=E.posbouton[3].x)&&(event.motion.x<=E.posbouton[3].x+180)&&(event.motion.y>=E.posbouton[3].y)&&(event.motion.y<=E.posbouton[3].y+70))
+				{
+					inp->s.motion=3;//sur case reponse num 3
+					//printf("sur la troisieme case\n");
+				}else 
+					inp->s.motion=-1;
+				break;
+
+			case SDL_MOUSEBUTTONDOWN:
+				inp->s.click=1;//click
+				break;
+		}
+void liberer (Enigme *E)
+{
+	int i;
+	
+  	for (int i=0;i<5;i++)
+	{
+		SDL_FreeSurface(E->Bouton[i]);
+	}		
+	SDL_FreeSurface(ecran);
+	free(E->fichierQ);
+	free(E->fichierRep);
+
+}
