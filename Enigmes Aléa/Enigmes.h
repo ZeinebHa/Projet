@@ -40,7 +40,7 @@ typedef struct
 {
  
  char  R_True[10];
- char question[100];
+ char question[20];
  char re1[10];
  char re2[10];
  int resolu=0;
@@ -50,7 +50,7 @@ typedef struct
  SDL_Surface *Boutons[6];
  SDL_Rect posbouton[6];
  SDL_Surface *Question,*Reponse1,*Reponse2,*Reponse3;
- SDL_Surface  *image1,*image2,image3;
+ 
  
 }Enigme;
 
@@ -65,6 +65,6 @@ char generer_Reponse(char *reponse1, *reponse2,*reponse3);
 void afficher_Question(Enigme E, SDL_Surface *ecran,char nomFich[]);
 void afficher_Reponses(Enigme E);
 int solution_enigme(Enigme E);
-void EventBoutons_Enigme(SDL_Event event,Enigme E);
+void EventBoutons_Enigme(SDL_Event event,Enigme E,input *inp);
 void liberer (Enigme *E);
 #endif // ENIGME_H_INCLUDED
