@@ -8,6 +8,34 @@
 #include "SDL/SDL_ttf.h"
 #include <time.h>
 
+typedef struct clavier
+{
+	
+	int droite;
+	int gauche;
+	int echap;
+	int entrer;
+	int a;
+	int b;
+	
+}clavier; 
+
+typedef struct souris 
+{
+	int click;
+	int motion;
+	//int up;
+}souris;
+
+/*typedef struct manette 
+{
+}manette;*/
+typedef struct input
+{
+	clavier c;
+	souris s;
+	//manette m;
+}input;
 typedef struct 
 {
  
