@@ -66,5 +66,5 @@ void afficher_Question(Enigme E, SDL_Surface *ecran,char nomFich[]);
 void afficher_Reponses(Enigme E);
 int solution_enigme(Enigme E);
 void EventBoutons_Enigme(SDL_Event event,Enigme E);
-void liberer ();
+void liberer (Enigme *E);
 #endif // ENIGME_H_INCLUDED
