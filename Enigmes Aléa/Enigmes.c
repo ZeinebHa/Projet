@@ -3,8 +3,9 @@
 #include<string.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
-#include "enigme.h"
+#include "Enigme.h"
 #include "time.h"
+
 void initialiser_enigme(Enigme *E)
 {
 		
@@ -18,8 +19,47 @@ void initialiser_enigme(Enigme *E)
 	E->Questions.x= 0;
 	E->Questions.y= 0;
 	E->Question= NULL;
+	
+	//initialiser boutons de l'enigme
+	
+	enig->bouton[0]=IMG_Load("Question 2.jpg");
+	enig->bouton[1]=IMG_Load("Reponse.jpg");
+	enig->bouton[2]=IMG_Load("Reponse.jpg");
+	enig->bouton[3]=IMG_Load("Reponse.jpg");
+	enig->bouton[4]=IMG_Load("vrai.jpg");
+	enig->bouton[5]=IMG_Load("faux.jpg");
+	
+	//initialiser pos Bouton
+	
+	enig->posbouton[0].x=181; 
+	enig->posbouton[0].y=95; 
+	enig->posbouton[1].x=130; 
+	enig->posbouton[1].y=395; 
+	enig->posbouton[2].x=385; 
+	enig->posbouton[2].y=395; 
+	enig->posbouton[3].x=640; 
+	enig->posbouton[3].y=395; 
+	enig->posbouton[4].x=650; 
+	enig->posbouton[4].y=100;
+	enig->posbouton[5].x=650; 
+	enig->posbouton[5].y=100;
 }
 
+void init_input(input *inp)
+{
+	//*****clavier
+	
+	inp->c.droite=-1;
+	inp->c.gauche=-1;
+	inp->c.echap=-1;
+	inp->c.entrer=-1;
+	inp->c.a=-1;
+	inp->c.b=-1;
+	
+	//****souris
+	inp->s.click=-1;
+	inp->s.motion=-1;
+}
 void generer_Question( Enigme E, char nomFich[])
 {
      // enregistrement des Questions
@@ -91,9 +131,10 @@ generer_Question(E,nomFich);
 
     }
 
-
+   else
+   {
 //police//
-    Font=TTF_OpenFont("angelina.ttf", 50);
+    Font=TTF_OpenFont("Dealer Strikes Straight.ttf", 50);
 
     if(Font==NULL)
     {
@@ -137,6 +178,7 @@ generer_Question(E,nomFich);
     TTF_CloseFont(Font);
 }
 
+}
 void generer_Reponse(char *reponse1, *reponse2,*reponse3)
 {
    
@@ -229,7 +271,7 @@ do
     }
 
 //police//
-    Font=TTF_OpenFont("angelina.ttf", 50);
+    Font=TTF_OpenFont("Dealer Strikes Straight.ttf", 50);
 
     if(Font==NULL)
     {
@@ -309,13 +351,17 @@ reponse= ReponseVrai(Tab[3]);
 
 if (strcmp(R_True,reponse)==0)
 {
+  SDL_BlitSurface(&E->bouton[4],NULL,ecran,&enig->posbouton[4]);
+  SDL_Flip(ecran);			
   (E.resolu)++;
-   printf("Bravo et bonne continuation \n");
+  printf("Bravo et bonne continuation \n");
   return 1;
 }
 else
 {
   (E.resolu =0);
+   SDL_BlitSurface(&E->bouton[5],NULL,ecran,&E->posbouton[5]);
+   SDL_Flip(ecran);
    scorevie = scorevie -1;
    printf(" reponse fausse! Veuillez réessaiyez encore une fois \n");
 return 0;
