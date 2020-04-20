@@ -8,21 +8,41 @@
 
 void initialiser_enigme(Enigme *E)
 {
-		
+	int i,j,k,l;
+	
 	E->Img=NULL;
 	E->temps= 0000
 	E->resolu =0;
-	E->R_True = "";
-	E->question = "";
-	E->re1 = "";
-	E->re2 = "";
+	
+	// initialiser les chaines ou les champs question , reponsvraie ainsi que les 2 alternatives a des chaines vides
+	for (i=0;i<20;i++)
+	{
+	E->question[i] = "";
+	}
+	
+	for (j=0;j<10;j++)
+	{
+		E->R_True[j] = "";
+	}
+	
+	for (k=0;k<10;k++)
+	{
+		E->re1 [k]= "";
+	        
+	}
+	
+	for (l=0;l<10;l++)
+	{
+		E->re2[k]= "";
+	}
+	
 	E->Questions.x= 0;
 	E->Questions.y= 0;
 	E->Question= NULL;
 	
 	//initialiser boutons de l'enigme
 	
-	enig->bouton[0]=IMG_Load("Question 2.jpg");
+	enig->bouton[0]=IMG_Load("Question 1.jpg");
 	enig->bouton[1]=IMG_Load("Reponse.jpg");
 	enig->bouton[2]=IMG_Load("Reponse.jpg");
 	enig->bouton[3]=IMG_Load("Reponse.jpg");
@@ -88,7 +108,7 @@ void generer_Question( Enigme E, char nomFich[])
 
    //Generation Aleatoire de la question
 
-srand(time(NULL));
+srand(E.time(NULL));
 
 E.fichierQ= fopen(nomFich, "r");
         if (E.fichierQ == NULL)
@@ -134,7 +154,7 @@ generer_Question(E,nomFich);
    else
    {
 //police//
-    Font=TTF_OpenFont("Dealer Strikes Straight.ttf", 50);
+    Font=TTF_OpenFont("Dealer Strikes Straight.ttf", 25);
 
     if(Font==NULL)
     {
@@ -271,7 +291,7 @@ do
     }
 
 //police//
-    Font=TTF_OpenFont("Dealer Strikes Straight.ttf", 50);
+    Font=TTF_OpenFont("Dealer Strikes Straight.ttf", 25);
 
     if(Font==NULL)
     {
