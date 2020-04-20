@@ -47,7 +47,8 @@ typedef struct
  FILE *fichierQ;
  FILE *fichierRep;
  int temps;
- SDL_Surface *Boutons[5];
+ SDL_Surface *Boutons[6];
+ SDL_Rect posbouton[6];
  SDL_Surface *Question,*Reponse1,*Reponse2,*Reponse3;
  SDL_Surface  *image1,*image2,image3;
  
