@@ -10,7 +10,7 @@ void initialiser_enigme(Enigme *E)
 {
 	int i,j,k,l;
 	
-	E->Img=NULL;
+	
 	E->temps= 0000
 	E->resolu =0;
 	
@@ -83,8 +83,7 @@ void init_input(input *inp)
 void generer_Question( Enigme E, char nomFich[])
 {
      // enregistrement des Questions
-    FILE *fichier=NULL;
-
+    
      char chaine[100];
      int ligneActu=1,
      char QuestActu[0];
