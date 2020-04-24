@@ -50,6 +50,8 @@ typedef struct
  SDL_Surface *Boutons[6];
  SDL_Rect posbouton[6];
  SDL_Surface *Question,*Reponse1,*Reponse2,*Reponse3;
+ SDL_Rect *Questions[3];
+ SDL_Rect *Reponse0T,*Reponse01,*Reponse02;
  
  
 }Enigme;
