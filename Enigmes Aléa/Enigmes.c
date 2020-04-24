@@ -3,7 +3,7 @@
 #include<string.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
-#include "Enigme.h"
+#include "Enigmes.h"
 #include "time.h"
 
 void initialiser_enigme(Enigme *E)
@@ -42,27 +42,27 @@ void initialiser_enigme(Enigme *E)
 	
 	//initialiser boutons de l'enigme
 	
-	enig->bouton[0]=IMG_Load("Question 1.jpg");
-	enig->bouton[1]=IMG_Load("Reponse.jpg");
-	enig->bouton[2]=IMG_Load("Reponse.jpg");
-	enig->bouton[3]=IMG_Load("Reponse.jpg");
-	enig->bouton[4]=IMG_Load("vrai.jpg");
-	enig->bouton[5]=IMG_Load("faux.jpg");
+	E->Bouton[0]=IMG_Load("Question 1.jpg");
+	E->Bouton[1]=IMG_Load("Reponse.jpg");
+	E->Bouton[2]=IMG_Load("Reponse.jpg");
+	E->Bouton[3]=IMG_Load("Reponse.jpg");
+	E->Bouton[4]=IMG_Load("vrai.jpg");
+	E->Bouton[5]=IMG_Load("faux.jpg");
 	
 	//initialiser pos Bouton
 	
-	enig->posbouton[0].x=181; 
-	enig->posbouton[0].y=95; 
-	enig->posbouton[1].x=130; 
-	enig->posbouton[1].y=395; 
-	enig->posbouton[2].x=385; 
-	enig->posbouton[2].y=395; 
-	enig->posbouton[3].x=640; 
-	enig->posbouton[3].y=395; 
-	enig->posbouton[4].x=650; 
-	enig->posbouton[4].y=100;
-	enig->posbouton[5].x=650; 
-	enig->posbouton[5].y=100;
+	E->posbouton[0].x=181; 
+	E->posbouton[0].y=95; 
+	E->posbouton[1].x=130; 
+	E->posbouton[1].y=395; 
+	E->posbouton[2].x=385; 
+	E->posbouton[2].y=395; 
+	E->posbouton[3].x=640; 
+	E->posbouton[3].y=395; 
+	E->posbouton[4].x=650; 
+	E->posbouton[4].y=100;
+	E->posbouton[5].x=650; 
+	E->posbouton[5].y=100;
 }
 
 void init_input(input *inp)
