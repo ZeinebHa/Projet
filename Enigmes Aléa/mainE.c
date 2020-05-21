@@ -64,8 +64,16 @@ Initialiser_Enigme(&E);
   afficher_Reponses(E);
  SolutionE= solution_enigme(E);
  EventBoutons_Enigme(event,E,&I);
-liberer (&E);
+ SDL_Flip(ecran);
+
   
 
 
-}
+
+	if (continuer==0)
+	{
+            liberer (&E);
+	    SDL_Quit();
+	}
+return 0;	
+ }
