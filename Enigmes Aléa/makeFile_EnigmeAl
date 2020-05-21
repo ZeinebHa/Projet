@@ -1,0 +1,4 @@
+prog:Enigmes_H.o Enigmes_C.o mainE.o	gcc Enigmes_H.o Enigmes_C.o mainE.o -o prog
+mainE.o: mainE.c	Enigmes_H.h
+Enigmes_C.o: Enigmes_C.c	Enigmes_H.h
+Enigmes_H.o: Enigmes_H.h	   
