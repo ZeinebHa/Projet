@@ -15,26 +15,24 @@ void initialiser_enigme(Enigme *E)
 	E->resolu =0;
 	
 	// initialiser les chaines ou les champs question , reponsvraie ainsi que les 2 alternatives a des chaines vides
-	for (i=0;i<20;i++)
-	{
-	E->question[i] = "";
-	}
 	
-	for (j=0;j<10;j++)
+	do
 	{
-		E->R_True[j] = "";
-	}
+		printf(" veuillez donner la question \n ");
+		scanf("%s\n",E->question);
+		
+		printf(" veuillez donner la  R_True \n ");
+		scanf("%s\n",E->R_True);
+		
+		printf(" veuillez donner la reponse 1 \n ");
+		scanf("%s\n",E->re1);
+	   	
+		printf(" veuillez donner la reponse 2 \n ");
+		scanf("%s\n",E->re2););
+		
+		
+	}while( (strcmp(E->question,"") != 0) || (strcmp(E->R_True,"") != 0)  || (strcmp(E->re1,"") != 0)  || (strcmp(E->re2,"") != 0) );
 	
-	for (k=0;k<10;k++)
-	{
-		E->re1 [k]= "";
-	        
-	}
-	
-	for (l=0;l<10;l++)
-	{
-		E->re2[k]= "";
-	}
 	
 	E->Questions.x= 0;
 	E->Questions.y= 0;
