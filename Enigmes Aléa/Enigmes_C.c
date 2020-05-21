@@ -107,7 +107,7 @@ void generer_Question( Enigme E, char nomFich[])
 
    //Generation Aleatoire de la question
 
-srand(E.time(NULL));
+E.temps = = SDL_GetTicks();
 
 E.fichierQ= fopen(nomFich, "r");
         if (E.fichierQ == NULL)
@@ -368,7 +368,7 @@ afficher_Question(E,ecran, nomFich);
 afficher_Reponses(E);
 reponse= ReponseVrai(Tab[3]);
 
-if (strcmp(R_True,reponse)==0)
+if (strcmp(E.R_True,reponse)==0)
 {
   SDL_BlitSurface(&E->bouton[4],NULL,ecran,&enig->posbouton[4]);
   SDL_Flip(ecran);			
