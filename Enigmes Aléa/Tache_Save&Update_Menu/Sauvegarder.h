@@ -9,7 +9,7 @@ typedef struct save//toutes les structures+collision?
 	FILE *fichier;
 }save; 
 
-void update_save (save *s, personnage p,zombie z,);
+void update_save (save *s, personnage p,zombie z,SDL_Surface back);
 void enregistrer (save s);
 void recuperer (save *s);
 
