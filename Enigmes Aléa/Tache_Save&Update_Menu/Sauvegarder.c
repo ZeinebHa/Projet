@@ -3,6 +3,7 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
 #include "Sauvegarder.h"
+#include "structs.h"
 
 void update_save (save *s, personnage pers, zombie zom, SDL_Surface *back)
 {
