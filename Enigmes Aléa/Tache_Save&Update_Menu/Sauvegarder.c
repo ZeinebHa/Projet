@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
-#include "Sauvegarde.h"
+#include "Sauvegarder.h"
 
 void update_save (save *s, personnage pers, zombie zom, SDL_Surface *back)
 {
