@@ -1,6 +1,6 @@
 #ifndef FONCTIONS_H_
 #define FONCTIONS_H_
-
+#include "structures.h"
 typedef struct save//toutes les structures+collision?
 {
 	personnage p; 
