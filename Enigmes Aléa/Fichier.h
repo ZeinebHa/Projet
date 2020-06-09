@@ -1,12 +1,32 @@
 #ifndef FICHIER_H_INCLUDED
 #define FICHIER_H_INCLUDED
+typedef struct clavier
+{
+	
+	int droite;
+	int gauche;
+	int echap;
+	int entrer;
+	int a;
+	int b;
+	
+}clavier; 
+
+typedef struct souris 
+{
+	int click;
+	int motion;
+	//int up;
+}souris;
+
+/*typedef struct manette 
+{
+}manette;*/
 typedef struct input
 {
-int right;
-int left;
-int up;
-int down;
-int exit;
+	clavier c;
+	souris s;
+	//manette m;
 }input;
 
 
@@ -61,20 +81,27 @@ SDL_Rect posvie;
 int nb;
 }vie;
 
-typedef struct enigme
+typedef struct 
 {
-SDL_Surface *texte;
-SDL_Surface *answer[4];
-SDL_Rect postxt;
-SDL_Rect posans1;
-SDL_Rect posans2;
-SDL_Rect posans3;
-}enigme;
+ char  R_True[10];
+ char question[20];
+ char re1[10];
+ char re2[10];
+ int resolu=0;
+ FILE *fichierQ;
+ FILE *fichierRep;
+ int temps;
+ SDL_Surface *Boutons[6];
+ SDL_Rect posbouton[6];
+ SDL_Surface *Question,*Reponse1,*Reponse2,*Reponse3;
+ SDL_Rect *Questions[3];
+ SDL_Rect *Reponse0T,*Reponse01,*Reponse02;
+ }Enigme;
 
 typedef struct enigmes
 {
 int nbenigmes;
-enigme E[30];
+Enigme E[30];
 }enigmes;
 
 typedef struct score
@@ -90,14 +117,17 @@ SDL_Surface *texte;
 SDL_Rect poschrono;
 }chrono;
 
-void initialisier_enig(enigme *enig);	
-void afficher_enigme(enigme enig);
+
 
 //***************************enigme*******************
-void enigmi ();
-void initialiser_enigmes(enigmes *ES);
-int  afficher_enigmes(enigmes *ES,SDL_Surface *fenetre);
-int ResolutionEniges(enigmes ES,int IndiceEnigme,char an[]);
+void Initialiser_Enigme(Enigme *E);
+void generer_Question(SDL_Surface *ecran, char nomFich[],Enigme E );
+char generer_Reponse(char *reponse1, *reponse2,*reponse3);
+void afficher_Question(Enigme E, SDL_Surface *ecran,char nomFich[]);
+void afficher_Reponses(Enigme E);
+int solution_enigme(Enigme E);
+void EventBoutons_Enigme(SDL_Event event,Enigme E,input *inp);
+void liberer (Enigme *E);
 
 
 //P.c
