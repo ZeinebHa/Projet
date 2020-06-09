@@ -19,7 +19,7 @@ typedef struct perso
 {
 	SDL_Surface *image;
 	SDL_Rect positionimg;
-	SDL_Rect pospoint[8];// contour du personnage 5edmet rania
+	SDL_Rect pospoint[8];
 	int frame;
 	SDL_Rect animepos [6];
 	SDL_Rect clip[6];
@@ -79,12 +79,8 @@ void deplacement_droite(SDL_Rect clip[6]);
 void deplacement_gauche(SDL_Rect clip[6]);
 void dep2_right(SDL_Rect clip[4]);
 void dep2_left(SDL_Rect clip[4]);
-void update_perso(input inp,perso *p);// deplacement
-
-
+void update_perso(input inp,perso *p);// deplacement du perso
 void get_input(input *inp, Mix_Chunk* sound,int *continuer, int *enigme_ouvert) ;
-
-
 void afficher_perso(perso p, SDL_Surface *screen);
 void afficher_back(bg b, SDL_Surface *screen);
 void liberer_perso(perso *p);
