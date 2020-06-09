@@ -56,10 +56,10 @@ int main ()
         
 Initialiser_Enigme(&E);
 
- while (continue=1)
+ while (continuer=1)
 	{ 
 	generer_Question(ecran,nomFich,E);
-        generer_Reponse(&reponse1,&reponse2,&reponse3);
+        generer_Reponse(reponse1,reponse2,reponse3);
   afficher_Question(E,&ecran,nomFich);
   afficher_Reponses(&E);
  SolutionE= solution_enigme(E);
