@@ -85,9 +85,9 @@ void update_perso(input inp,perso *p);// deplacement
 void get_input(input *inp, Mix_Chunk* sound,int *continuer, int *enigme_ouvert) ;
 
 
-void afficher_persoYasmine (perso p, SDL_Surface *screen);
-void afficher_backYasmine(bg b, SDL_Surface *screen);
-void liberer_persoYasmine (perso *p);
-void liberer_backYasmine (bg *b);
+void afficher_perso(perso p, SDL_Surface *screen);
+void afficher_back(bg b, SDL_Surface *screen);
+void liberer_perso(perso *p);
+void liberer_back(bg *b);
 #endif // FONCTION_H_INCLUDED
 
