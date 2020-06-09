@@ -69,8 +69,8 @@ typedef struct input
 
 
 
-void init_backYasmine (back* b);
-void init_persoYasmine (acteur* acteur);
+void init_back(bg* b);
+void init_perso(perso* p);
 
 
 void init_input(input *inp) ; 
