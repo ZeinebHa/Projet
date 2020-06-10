@@ -27,4 +27,3 @@ void zoom(int *tempsActuel,int *tempsPrecedent,SDL_Surface *ecran,double *angle,
         SDL_FreeSurface(rotation); 
         SDL_Flip(ecran);
         }
-© 2020 GitHub, Inc.
