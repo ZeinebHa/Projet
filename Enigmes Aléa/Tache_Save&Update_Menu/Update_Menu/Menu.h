@@ -61,7 +61,6 @@ typedef struct menu
 	int intro;
 	int choix_boutons;// 0=play ; 1=settings;  2=credits; 3=exit 
 	int choix_options;// 0=fullscreen; 1=audio; 2=barreSon; 3=return; 4=yes; 5=no; 6=save; 7=dontSave
-	int zoombouton; //Le bouton apparait en plus grand lorsque le joueur est dessus (clavier + souris)
 	int mode;//1=Solo ou multi ; 2=New ou load ; 3=le jeu demarre; 4=minimenu ; 5=Sauvegarde ;
 	int choix_mode[4];//0=Solo(1)-Multi(2)-return(3); 1=New(1)-Load(2)-return(3); 2=resume(1)-restart(2)-settings(3)-exit(4); 3=save(1)-dontsave(2)
 }menu;
@@ -84,9 +83,6 @@ void afficher_exit(menu m,SDL_Surface *ecran);
 void fullscreen(SDL_Surface *ecran,int *full);
 
 void get_input_menu(input *inp,menu m,int *continuer,Mix_Chunk *sound,int *barrougeX);
-
-menu zoom_clavier(menu m, input inp);
-menu zoom_souris(menu m,input inp);
 
 menu choix_menu(menu m,input inp);
 menu choix_settings(menu m,input inp);
