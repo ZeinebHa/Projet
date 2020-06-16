@@ -1,15 +1,11 @@
-	
 #include <SDL/SDL.h>
 #include <SDL/SDL_mixer.h>
 #include <SDL/SDL_image.h>
-/** 
- * @struct enigme
-* @brief struct for enigmas
- */
+
 typedef struct 
 {
- SDL_Surface * img; /*!< Surface. */ 
- SDL_Rect 	p; /*!< rectangle. */ 
+ SDL_Surface * img; 
+ SDL_Rect 	p; 
 }enigme;
 
 void init_enigme(enigme * e) ;
