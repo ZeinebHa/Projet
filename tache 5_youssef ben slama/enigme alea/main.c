@@ -1,9 +1,3 @@
-/**  
-* @file main.c  
-* 
-*/ 
-
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -66,7 +60,7 @@ r1=resolution1 (&running,&run ) ;
 printf("%d    %d\n",r1,r2);
 
 
- //fprintf(f,"1= %.2f \nx2= %. \nr2=%d \n r1=%d\n alea: %d",x1,x2,r2,r1,alea) ;	 
+
 			
 			afficher_resultat (screen,r1,r2,&e,x1,x2) ;			
       while(running){
