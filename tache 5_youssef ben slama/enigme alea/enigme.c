@@ -1,6 +1,3 @@
-/** 
- * @file enigf.c 
-*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -10,10 +7,7 @@
 #include "enigme.h"
 #include <math.h>
 #include <time.h> 
-/**  * @brief  To initialize the enigma . 
- * @param e the enigma   
- * @return Nothing  
-*/
+
 void init_enigme(enigme * e)
 {
 	e->p.x=0;
@@ -22,13 +16,7 @@ void init_enigme(enigme * e)
 
 
 }
-/**  * @brief  generer et afficher l enigme e . 
- * @param the screen
- * @param image char
- * @parame the enigas
- * @param alea integer    
- * @return Nothing  
-*/
+
  void generate_afficher (SDL_Surface * screen  , char image [],enigme *e,int *alea)
 { 
 	//int test=*alea ;
@@ -40,10 +28,7 @@ e->img = IMG_Load(image);
  SDL_BlitSurface(e->img,NULL,screen,&(e->p)) ;
   SDL_Flip(screen) ;
 }
- /**  * @brief solution de l enigme . 
- * @param image char    
- * @return int
- */
+ 
  void solution_e1 (SDL_Surface * screen ,char image [],int *x1,int *x2)
  {   SDL_Surface *img,*img1,*img2;
   char im1[30];
@@ -71,26 +56,6 @@ img=IMG_Load("c1.png");
 SDL_BlitSurface(img,NULL,screen,&p);
 SDL_Flip(screen);
 
-/*for(i==1;i<10;i++)
-{
-if(i==d)
-{
-sprintf(im1,"c%d.png",i);
-img1=IMG_Load(im1);
-SDL_BlitSurface(img1,NULL,screen,&p1);
-SDL_Flip(screen);
-}
-}
-for(j==1;j<10;j++)
-{
-if(j==c)
-{
-sprintf(im2,"c%d.png",j);
-img1=IMG_Load(im2);
-SDL_BlitSurface(img2,NULL,screen,&p2);
-SDL_Flip(screen);
-}
-}*/
  
 printf(" %d    %d    %d  %d\n",a,b,c,d);
        delta= pow(b,2) -4*a*c;
@@ -226,26 +191,13 @@ SDL_Flip(screen);
 
 
   }
- 	/*if(strcmp(image,"2.jpg")==0)
- 	{
-       a=1;
-       b= -9;
-       c=20;
-       delta= pow(b,2) -4*a*c;
-      *x1=  (-b- sqrt(delta))/(2*a) ;
-      *x2= (-b+(sqrt(delta)))/(2*a);
-     
-  }*/	
+ 	
  	
 
  }
 
 
-/**  * @brief  resolution de lenigme . 
- * @param run eint
- * @param running int  
- * @return int
- */
+
 int resolution1 (int * running,int *run )
 {
 	SDL_Event event ;
@@ -273,13 +225,7 @@ return r;
 
 
 
- /**  * @brief  affichage de resultat .
- * @param screen surface 
- * @params int
- * @paramr int 
- * @paramen enigme  
- * @return Nothing 
- */
+
  void afficher_resultat (SDL_Surface * screen,int r2,int r1,enigme *en,int x1,int x2)
  {
   FILE *f ;  
